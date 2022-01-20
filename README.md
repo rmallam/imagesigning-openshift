@@ -23,7 +23,7 @@ Build the image in the normal process that is used currently but push it to the 
 export CONTAINERS_SIGNATURE_PASSPHRASE="passwordhere" # passphrase used for creating the gpg key - only the latest version of skopeo will use this variable, older versions will prompt for a GPG passphrase (https://github.com/containers/skopeo/pull/1540)
 ```
 ```
-skopeo copy --remove-signatures --sign-by emailusedabove docker://busybox docker://rakesh.azurecr.io/mallam/busybox:2.0 
+skopeo copy --remove-signatures --sign-by emailusedabove docker://busybox docker://test.azurecr.io/mallam/busybox:2.0 
 ```
 - Signatures are generated to a folder based on the config from default.yaml normally located under
 /etc/containers/registries.d/default.yaml 
@@ -32,7 +32,7 @@ skopeo copy --remove-signatures --sign-by emailusedabove docker://busybox docker
 - Copy these signatures to azure blob storage, Note the container should be public read for the openshift
 cluster to be able to read them.
 ```
-azcopy copy "/Users/rakeshkumarmallam/sigstore/*" https://newrakesh.blob.core.windows.net/imagecontainer\ --recursive=true
+azcopy copy "/Users/rakeshkumarmallam/sigstore/*" https://test.blob.core.windows.net/imagecontainer --recursive=true
 ```
 ## openshift config to allow only signed images from RedHat registries and Custom registries hosted internally.
 ```
@@ -84,7 +84,7 @@ cat <<EOF > y
 .yaml
 docker:
      yourregistry:
-         sigstore: https://newrakesh.blob.core.windows.net/imagecontainer #location where the signatures are stored.
+         sigstore: https://test.blobra.core.windows.net/imagecontainer #location where the signatures are stored.
 EOF
 
 cat <<EOF > registry.access.redhat.com.yaml
