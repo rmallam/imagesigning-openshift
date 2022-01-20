@@ -2,9 +2,8 @@
 
 ## Pre-requisites
 
-Skopeo -- latest version to support GPG passphrase being passed
-GPG
-
+- Skopeo -- latest version to support GPG passphrase being passed (https://github.com/containers/skopeo/pull/1540)
+- GPG
   
 ##  Build Process
 
