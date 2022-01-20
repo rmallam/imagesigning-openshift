@@ -20,7 +20,7 @@
 Build the image in the normal process that is used currently but push it to the registry using Skopeo
 
 ```
-export CONTAINERS_SIGNATURE_PASSPHRASE="mallamrakesh123" # passphrase used for creating the gpg key
+export CONTAINERS_SIGNATURE_PASSPHRASE="passwordhere" # passphrase used for creating the gpg key - only the latest version of skopeo will use this variable, older versions will prompt for a GPG passphrase (https://github.com/containers/skopeo/pull/1540)
 ```
 ```
 skopeo copy --remove-signatures --sign-by emailusedabove docker://busybox docker://rakesh.azurecr.io/mallam/busybox:2.0 
