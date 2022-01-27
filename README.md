@@ -23,7 +23,7 @@ Build the image in the normal process that is used currently but push it to the 
 export CONTAINERS_SIGNATURE_PASSPHRASE="passwordhere" # passphrase used for creating the gpg key - only the latest version of skopeo will use this variable, older versions will prompt for a GPG passphrase (https://github.com/containers/skopeo/pull/1540)
 ```
 ```
-skopeo copy --remove-signatures --sign-by emailusedabove docker://busybox docker://test.azurecr.io/mallam/busybox:2.0 
+skopeo copy --sign-by emailusedabove docker://busybox docker://test.azurecr.io/mallam/busybox:2.0 
 ```
 - Signatures are generated to a folder based on the config from default.yaml normally located under
 /etc/containers/registries.d/default.yaml 
