@@ -11,7 +11,7 @@
     gpg --full-generate-key
     gpg --list-keys 
     gpg --export --armor email > signer-key-new.pub #This public key will be stored on the worker nodes to validate the signature of the images that are being pulled
-    gpg --export-secret-key avyaan > my-key.key  #private key for gpg encryption  - store in keyvault?
+    gpg --export-secret-key keyname > my-key.key  #private key for gpg encryption  - store in keyvault?
     gpg --import ~/my-key.key  # import it back when build process starts
 
   ```
