@@ -145,4 +145,5 @@ EOF
 
 - Apply machine config
 ```
-oc apply -f 51-master-rh-registry-trust.yaml```
+oc apply -f 51-master-rh-registry-trust.yaml
+```
