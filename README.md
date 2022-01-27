@@ -78,10 +78,7 @@ cat > policy.json <<EOF
 }
 EOF
 
-cat <<EOF > y
-
-
-.yaml
+cat <<EOF > yourregistry.yaml
 docker:
      yourregistry:
          sigstore: https://test.blobra.core.windows.net/imagecontainer #location where the signatures are stored.
