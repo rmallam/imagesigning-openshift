@@ -25,6 +25,10 @@ export CONTAINERS_SIGNATURE_PASSPHRASE="passwordhere" # passphrase used for crea
 ```
 skopeo copy --sign-by emailusedabove docker://busybox docker://test.azurecr.io/mallam/busybox:2.0 
 ```
+or from local
+```
+skopeo copy --sign-by emailusedabove docker-daemon://busybox:1.0 docker://test.azurecr.io/mallam/busybox:2.0 
+```
 - Signatures are generated to a folder based on the config from default.yaml normally located under
 /etc/containers/registries.d/default.yaml 
   - in my case, signatures are stored under /Users/rakeshkumarmallam/sigstore/
